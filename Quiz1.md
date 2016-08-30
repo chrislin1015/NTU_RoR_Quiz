@@ -2,6 +2,7 @@
 > Fixnum是表示0,1,2等整數，可以有正負值
 > Float是表示0.1,0.5,3.14等有小數的數值，同樣也有正負值
 > Fixnum與Fixnum的運算結果都會是Fixnum，Float與Float的運算也是Float．但是Fixnum與Float的運算結果會是以Float表示
+
 2. 今天有兩個字串：
 ```ruby
 str1 = "Hallo Welt!" 
@@ -13,6 +14,7 @@ puts str1 + str2
 puts "#{str1}#{str2}"
 ```
 > 輸出的結果是一樣的，不過第一行的字串相加，是字串間經過＋這個operator，會經過函式的堆疊與記憶體的搬移．第二行是直接經過字串將變數轉換的方式，直接輸出成一個字串，是直接透過編譯器轉換．
+
 3. 請解釋 array 和 hash 的不同處
 > array與hash都是一種資料結構，目的是將資料收集起來，方便日後存取。兩個的不同點是
 > array
@@ -34,14 +36,17 @@ man = {
 # 只能透過key來存取
 puts man[:name]  # 印出Chris
 ```
+
 4. 請用一行程式碼從 [1, "a string", 3.14, [1,2,3,4]] 這個陣列找出所有非字串的值
 ```ruby
 arr.select { |x| x.is_a? string }
 ```
+
 5. 請用一行程式碼把一個內容為整數 1 到 100 的陣列裡所有的值加上 2
 ```ruby
 arr.map! { |x| x += 2 }
 ```
+
 6. 請寫出以下兩行程式碼迴傳的值，並解釋他們呼叫的方法差別為何：
 ```ruby
 [1, 2, 3, 3].uniq
@@ -55,6 +60,7 @@ puts arr       #=> [1, 2, 3, 3] 並沒有改變
 puts arr.uniq! #=> [1, 2, 3]
 puts arr       #=> [1, 2, 3] 已經改變了
 ```
+
 7. 請列出兩種產出亂數的方法
 ```ruby
 # 用array的sample，會隨機取樣一個陣列內容出來
@@ -66,12 +72,14 @@ puts arr.shuffle!.first
 var = Random.rand(1..3)   # 1~3隨機一個數
 var = Random.rand(1...3)  # 1~2隨機一個數，不包含3
 ```
+
 8. 以下這段程式碼：
 ```ruby
 ((1 > 3)&&(true == true))||(!!!false)
 ```
 會執行出什麼結果？ 請試試不用 irb 算出結果
 > 回傳True
+
 9. 請問 binding.pry 是什麼？ 要如何使用它？
 > binding.pry是Ruby在執行時期中斷程式的方法。要能夠進行中斷除錯，必須先安裝pry這個套件
 > 安裝方法
@@ -79,7 +87,7 @@ var = Random.rand(1...3)  # 1~2隨機一個數，不包含3
 $ gem install pry
 $ gem list pry
 $ gem uninstall pry-nav 
-```        
+```
 > 使用方法
 ```ruby
 # 首先在需要進行中斷的ruby程式碼檔案的最上面加上引用的語法
@@ -89,6 +97,7 @@ var = "Hello World"
 binding.pry
 puts var
 ```
+
 10. 下面的一段程式碼，請嘗試用其他方法把 if...else...end 簡化成一行
 ```ruby
 var = 5
@@ -102,6 +111,7 @@ end
 var = 5
 return var >= 5 ? "var is greater than or equal to 5" : "var is less than 5"
 ```
+
 11. 請列出兩種不同的 hash 寫法
 > 使用hashrocket寫法
 ```ruby
