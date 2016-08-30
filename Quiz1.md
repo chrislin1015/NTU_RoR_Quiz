@@ -37,7 +37,7 @@
 
 4. 請用一行程式碼從 [1, "a string", 3.14, [1,2,3,4]] 這個陣列找出所有非字串的值
    ```ruby
-   arr.select { |x| x.is_a? string }
+   arr.reject { |x| x.is_a? string }
    ```
 
 5. 請用一行程式碼把一個內容為整數 1 到 100 的陣列裡所有的值加上 2
